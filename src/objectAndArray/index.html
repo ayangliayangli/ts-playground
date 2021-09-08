@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>object and array</h1>
+    <script>
+        class Foo {
+            constructor() {
+                this['bar'] = 'bar-value';
+                this['bar1'] = 'bar1-value';
+                this['bar2'] = 'bar2-value';
+                this[10] = '10-value';
+                this[5] = '5-value';
+                this[2] = '2-value';
+            }
+        }
+
+        const foo = new Foo();
+        for (const k in foo) {
+            if (Object.hasOwnProperty.call(foo, k)) {
+                const value = foo[k];
+                console.log(`key: ${k}, value: ${value}`) // ==> 2 5 10 bar bar1 bar2 这个顺序输出
+            }
+        }
+
+        const foo1 = {
+            1: '1-value',
+            2: '1-value',
+            3: '1-value',
+            4: '1-value',
+            'k1': 'k1-value',
+            'k2': 'k1-value',
+            'k3': 'k1-value',
+            'k4': 'k1-value',
+        }
+    </script>
+</body>
+</html>
