@@ -2,5 +2,19 @@
   "dependencies": {
     "ts-node": "^10.2.1",
     "typescript": "^4.4.2"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only ./src/demo.ts",
+    "client:dev": "webpack --mode development",
+    "build-tsc": "tsc ./src/demo.ts",
+    "build-webpack": "webpack --config ./webpack.config.js --mode 'development'"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/preset-typescript": "^7.15.0",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0"
   }
 }
