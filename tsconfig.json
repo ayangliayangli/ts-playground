@@ -1,4 +1,10 @@
 {
-    "lib": ["dom"],
-    "target": "esnext"
+  "lib": ["dom"],
+  "target": "esnext",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "out",
+    "sourceMap": true
+  }
 }
